@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Password Strength Checker</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles1.css"/>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4">
+
+  <div class="w-full max-w-md mx-auto">
+    <div class="bg-gray-800 rounded-xl shadow-2xl p-6 md:p-8">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl md:text-4xl font-bold tracking-tight bg-gradient-to-r from-purple-400 to-pink-500 text-transparent bg-clip-text">How Secure Is My Password?</h1>
+        <p class="text-gray-400 mt-2">Enter a password or let AI generate one for you.</p>
+      </div>
+
+      <!-- Password Input -->
+      <div class="relative mb-4">
+        <input type="password" id="password-input" placeholder="Type your password here..." class="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"/>
+        <div id="toggle-password" class="eye-icon">
+          <svg id="eye-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          <svg id="eye-closed" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" class="feather feather-eye-off" style="display: none;"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+        </div>
+      </div>
+
+      <!-- Generate Password Button -->
+      <div class="mb-4">
+        <button id="generate-password-btn" class="w-full flex items-center justify-center bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 rounded-lg hover:from-purple-500 hover:to-pink-500 transition-all duration-300 transform hover:scale-105 glow-button">
+          <div id="loader" class="loader"></div>
+          <span id="generate-btn-text">✨ Generate Secure Password</span>
+        </button>
+      </div>
+
+      <!-- Strength Bar -->
+      <div class="w-full bg-gray-700 rounded-full h-3 mb-4 overflow-hidden">
+        <div id="strength-bar" class="h-full rounded-full" style="width: 0%;"></div>
+      </div>
+
+      <!-- Results -->
+      <div id="results-container" class="text-center mt-6 min-h-[100px]">
+        <p id="time-to-crack" class="text-2xl font-bold text-white">&nbsp;</p>
+        <p id="feedback-text" class="text-gray-400 mt-2">&nbsp;</p>
+      </div>
+    </div>
+
+    <footer class="text-center mt-6 text-gray-600 text-xs">
+      <p>This is an estimate. Strong, unique passwords for every account are crucial.</p>
+    </footer>
+  </div>
+
+  <script src="script1.js"></script>
+</body>
+</html>
